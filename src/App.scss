@@ -11,6 +11,12 @@
 
 div.layout{
     // header lives in the layout div
+    background: red; 
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+
     header {
         padding: 0 5px;
         background: Black;
