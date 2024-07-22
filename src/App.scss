@@ -1,19 +1,8 @@
 
-div.cardContatiner{
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    
-    div.moduleCard {
-        width: 250px;
-    }
+div.moduleCard {
+    width: 250px;
+}
 
-    div.studentCard {
-        width: 200px;
-    }
-
+div.studentCard {
+    width: 200px;
 }
