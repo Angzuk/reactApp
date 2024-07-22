@@ -125,10 +125,12 @@ function App() {
         {
           modulelist.map((module)=>{
             return(
-              <div className="card" key={module.ModuleCode}>
-                <p>{module.ModuleCode}</p>
-                <p>{module.ModuleName}</p>
-                <img src={module.ModuleImageURL} />
+              <div className="moduleCard" key={module.ModuleCode}>
+                <div className="card">
+                  <p>{module.ModuleCode}</p>
+                  <p>{module.ModuleName}</p>
+                  <img src={module.ModuleImageURL} />
+                </div>
               </div>
           )
           })
@@ -136,14 +138,17 @@ function App() {
         </div>
 
         <h1>Students</h1>
+        
         <div className="cardContatiner">
         {
           studentlist.map((student)=>{
             return(
-              <div className="card" key={student.UserEmail}>
-                <p>{student.UserEmail.substring(0,8)}</p>
-                <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                <img src={student.UserImageURL} />
+              <div className="studentCard" key={student.UserEmail}>
+                <div className="card">
+                  <p>{student.UserEmail.substring(0,8)}</p>
+                  <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
+                  <img src={student.UserImageURL} />
+                </div>
               </div>
           )
           })
