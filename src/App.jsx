@@ -28,6 +28,10 @@ function App() {
         <p>Hompage</p>
       </main>
 
+      <footer>
+        <p className="thankyou">Thank you for using the system!</p>
+      </footer>
+
     </div>
 )
 }
