@@ -24,6 +24,10 @@ function App() {
         </div>
       </nav>
 
+      <main>
+        <p>Hompage</p>
+      </main>
+
     </div>
 )
 }
