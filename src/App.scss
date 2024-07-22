@@ -9,11 +9,13 @@
     // means that it can be later overwritten
 }
 
+div.layout{
+    // header lives in the layout div
+    header {
+        padding: 0 5px;
+        background: Black;
 
-header {
-    padding: 0 5px;
-    background: Black;
-
-    h1 {color: white; }
-    p.welcome {color: LimeGreen; }
+        h1 {color: white; }
+        p.welcome {color: LimeGreen; }
+    }
 }
