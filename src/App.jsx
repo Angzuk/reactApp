@@ -108,16 +108,19 @@ function App() {
 
       <main>
         <h1>Modules</h1>
+        <div className="cardContatiner">
         {
           modulelist.map((module)=>{
             return(
-              <div key={module.ModuleCode}>
+              <div className="card" key={module.ModuleCode}>
                 <p>{module.ModuleCode}</p>
                 <p>{module.ModuleName}</p>
+                <img src={module.ModuleImageURL} />
               </div>
           )
           })
         }
+        </div>
       </main>
 
       <footer>
