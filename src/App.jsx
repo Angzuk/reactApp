@@ -1,5 +1,6 @@
 import Header from './Header.jsx';
 import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 import './App.scss';
 
 function App() {
@@ -148,9 +149,7 @@ function App() {
 
       </main>
 
-      <footer>
-        <p className="thankyou">Thank you for using the system!</p>
-      </footer>
+      <Footer />
 
     </div>
 )
