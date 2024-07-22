@@ -107,7 +107,17 @@ function App() {
       </nav>
 
       <main>
-        <p>Hompage</p>
+        <h1>Modules</h1>
+        {
+          modulelist.map((module)=>{
+            return(
+              <div key={module.ModuleCode}>
+                <p>{module.ModuleCode}</p>
+                <p>{module.ModuleName}</p>
+              </div>
+          )
+          })
+        }
       </main>
 
       <footer>
