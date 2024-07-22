@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    // everything here are default values 
+    // means that it can be later overwritten
+}
+
+
+header {
+    padding: 0 5px;
+    background: Black;
+
+    h1 {color: white; }
+    p.welcome {color: LimeGreen; }
+}
