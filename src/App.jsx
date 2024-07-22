@@ -1,4 +1,5 @@
 import Layout from './components/layout/Layout.jsx';
+import Home from './components/views/Home.jsx';
 import { CardContainer, Card } from './components/UI/Card.jsx';
 import './App.scss';
 
@@ -101,7 +102,7 @@ function App() {
 
   return (
   <Layout loggedInUser={loggedInUser}>
-          <h1>Homepage</h1>
+          <Home/>
 
           <h1>Modules</h1>
           <CardContainer>
