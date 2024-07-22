@@ -18,4 +18,20 @@ div.layout{
         h1 {color: white; }
         p.welcome {color: LimeGreen; }
     }
+
+    nav {
+        padding: 5px;
+        background: limegreen;
+        display: flex;
+        gap: 10px;
+
+        div.navItem a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
 }
