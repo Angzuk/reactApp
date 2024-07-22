@@ -101,7 +101,7 @@ function App() {
   return (
     <div className="layout">
 
-      <Header />
+      <Header loggedInUser={loggedInUser}/>
 
       <nav>
         <div className="navItem">
