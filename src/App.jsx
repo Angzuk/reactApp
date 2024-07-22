@@ -1,4 +1,5 @@
 import Layout from './components/layout/Layout.jsx';
+import Card from './components/UI/Card.jsx';
 import './App.scss';
 
 function App() {
@@ -108,11 +109,11 @@ function App() {
             modulelist.map((module)=>{
               return(
                 <div className="moduleCard" key={module.ModuleCode}>
-                  <div className="card">
+                  <Card>
                     <p>{module.ModuleCode}</p>
                     <p>{module.ModuleName}</p>
                     <img src={module.ModuleImageURL} />
-                  </div>
+                  </Card>
                 </div>
             )
             })
