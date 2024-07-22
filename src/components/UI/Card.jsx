@@ -1,7 +1,11 @@
+import PropTypes from 'prop-types';
 import './Card.scss';
 
 export function CardContainer (props) {
-
+    // Initialisation -------------------------------------------
+    // State ----------------------------------------------------
+    // Handlers -------------------------------------------------
+    // View -----------------------------------------------------
     return(
         <div className="cardContainer">
             {
@@ -12,7 +16,10 @@ export function CardContainer (props) {
 }
 
 export function Card (props) {
-
+    // Initialisation -------------------------------------------
+    // State ----------------------------------------------------
+    // Handlers -------------------------------------------------
+    // View -----------------------------------------------------
     return(
         <div className="card">
             {
@@ -21,3 +28,11 @@ export function Card (props) {
         </div>
     );
 }
+
+CardContainer.propTypes = {
+    children: PropTypes.node,
+};
+
+Card.propTypes = {
+    children: PropTypes.node,
+};
