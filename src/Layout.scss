@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    // everything here are default values 
+    // means that it can be later overwritten
+}
+
+div.layout{
+    // header lives in the layout div
+    background: red; 
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+
+    main {
+        padding: 20px;
+        background: white;
+    }
+}

@@ -1,6 +1,4 @@
-import Header from './Header.jsx';
-import Navbar from './Navbar.jsx';
-import Footer from './Footer.jsx';
+import Layout from './Layout.jsx';
 import './App.scss';
 
 function App() {
@@ -101,58 +99,44 @@ function App() {
   ];
 
   return (
-    <div className="layout">
+  <Layout loggedInUser={loggedInUser}>
+          <h1>Homepage</h1>
 
-      <Header loggedInUser={loggedInUser}/>
-
-      <Navbar />
-
-
-      <main>
-
-        <h1>Homepage</h1>
-
-        <h1>Modules</h1>
-        <div className="cardContatiner">
-        {
-          modulelist.map((module)=>{
-            return(
-              <div className="moduleCard" key={module.ModuleCode}>
-                <div className="card">
-                  <p>{module.ModuleCode}</p>
-                  <p>{module.ModuleName}</p>
-                  <img src={module.ModuleImageURL} />
+          <h1>Modules</h1>
+          <div className="cardContatiner">
+          {
+            modulelist.map((module)=>{
+              return(
+                <div className="moduleCard" key={module.ModuleCode}>
+                  <div className="card">
+                    <p>{module.ModuleCode}</p>
+                    <p>{module.ModuleName}</p>
+                    <img src={module.ModuleImageURL} />
+                  </div>
                 </div>
-              </div>
-          )
-          })
-        }
-        </div>
+            )
+            })
+          }
+          </div>
 
-        <h1>Students</h1>
-        
-        <div className="cardContatiner">
-        {
-          studentlist.map((student)=>{
-            return(
-              <div className="studentCard" key={student.UserEmail}>
-                <div className="card">
-                  <p>{student.UserEmail.substring(0,8)}</p>
-                  <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                  <img src={student.UserImageURL} />
+          <h1>Students</h1>
+          <div className="cardContatiner">
+          {
+            studentlist.map((student)=>{
+              return(
+                <div className="studentCard" key={student.UserEmail}>
+                  <div className="card">
+                    <p>{student.UserEmail.substring(0,8)}</p>
+                    <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
+                    <img src={student.UserImageURL} />
+                  </div>
                 </div>
-              </div>
-          )
-          })
-        }
-        </div>
-
-      </main>
-
-      <Footer />
-
-    </div>
-)
+            )
+            })
+          }
+          </div>
+    </Layout>
+);
 }
 
 export default App

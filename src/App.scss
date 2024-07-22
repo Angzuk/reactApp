@@ -1,54 +1,29 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    // everything here are default values 
-    // means that it can be later overwritten
-}
-
-div.layout{
-    // header lives in the layout div
-    background: red; 
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr auto;
-
-    main {
-        padding: 20px;
-        background: white;
-
-        div.cardContatiner{
-            border: 1px solid lightgray;
-            border-radius: 3px;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            
-            div.moduleCard {
-                width: 250px;
-            }
-
-            div.studentCard {
-                width: 200px;
-            }
-
-            div.card {
-                width: 100%;
-                height: 100%;
-                padding: 10px;
-                border: 1px solid lightgray;
-                border-radius: 5px;
-                box-shadow: 4px 4px 8px 4px rgba(70,70,70,0.3);
-
-                img { width: 100%; display: block; border-radius: 0px 0px 3px 3px;}
-            }
-        }
+div.cardContatiner{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+    div.moduleCard {
+        width: 250px;
     }
 
+    div.studentCard {
+        width: 200px;
+    }
+
+    div.card {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        box-shadow: 4px 4px 8px 4px rgba(70,70,70,0.3);
+
+        img { width: 100%; display: block; border-radius: 0px 0px 3px 3px;}
+    }
 }
