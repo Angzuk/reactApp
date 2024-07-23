@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { CardContainer, Card } from '../UI/Card.jsx';
+import { CardContainer } from '../UI/Card.jsx';
+import ModuleCard from '../entity/module/ModuleCard.jsx';
 import './Modules.scss';
+
 
 function Modules() {
   // Initialisation -------------------------------------------
@@ -45,17 +47,9 @@ function Modules() {
             (<>
             <CardContainer>
             {
-              modules.map((module)=>{
-                return(
-                  <div className="moduleCard" key={module.ModuleCode}>
-                    <Card>
-                      <p>{module.ModuleCode}</p>
-                      <p>{module.ModuleName}</p>
-                      <img src={module.ModuleImageURL} />
-                    </Card>
-                  </div>
+              modules.map((module)=>
+                <ModuleCard module={module} key={module.ModuleCode}/>
               )
-              })
             }
             </CardContainer>
             <button onClick={() => handleAdd(newModule)}>Add module</button>
