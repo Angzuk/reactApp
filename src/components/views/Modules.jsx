@@ -41,7 +41,7 @@ function Modules() {
         {
         !modules
         ? (<p>Loading records...</p>)
-          :
+          : modules.length === 0 ? (<p>No records found...</p>) :
             (<>
             <CardContainer>
             {
