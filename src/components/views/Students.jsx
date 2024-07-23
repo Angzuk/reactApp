@@ -36,8 +36,8 @@ function Students (){
         <h1>Students</h1>
         {
           !students
-          ? <p>Loading records...</p>
-          :
+          ? ( <p>Loading records...</p> )
+          : (
           <>
             <CardContainer>
             {
@@ -58,7 +58,7 @@ function Students (){
             }
             </CardContainer>
             <button onClick={() => handleAdd(newStudent)}>Add student</button>
-          </>
+          </> )
         }
       </>
     );
