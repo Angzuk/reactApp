@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { CardContainer, Card } from '../UI/Card.jsx';
+import { CardContainer } from '../UI/Card.jsx';
 import './Students.scss';
+import UserCard from '../entity/user/UserCard.jsx';
 
 function Students (){
   // Initialisation -------------------------------------------
@@ -54,20 +55,9 @@ function Students (){
           <>
             <CardContainer>
             {
-              students.map((student)=>{
-                return(
-                  <div className="studentCard" key={student.UserEmail}>
-                    <Card>
-                      <p>{student.UserEmail.substring(0,8)}</p>
-                      <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                      <img 
-                        src={student.UserImageURL} 
-                        alt={student.UserEmail.substring(0,8)}
-                      />
-                    </Card>
-                  </div>
+              students.map((user)=>
+                  <UserCard user={user} key={user.UserEmail}/>
               )
-              })
             }
             </CardContainer>
             <button onClick={() => handleAdd(newStudent)}>Add student</button>
