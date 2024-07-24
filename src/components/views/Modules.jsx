@@ -43,7 +43,7 @@ function Modules() {
           <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>
         </Actions.Tray>
 
-        <ModuleForm/>
+        {showForm && <ModuleForm/>}
         {
         !modules
         ? (<p>Loading records...</p>)
