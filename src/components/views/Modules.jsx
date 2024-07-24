@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Actions from '../UI/Actions.jsx';
+import ModuleForm from '../entity/module/ModuleForm.jsx';
 import { CardContainer } from '../UI/Card.jsx';
 import ModuleCard from '../entity/module/ModuleCard.jsx';
 import './Modules.scss';
@@ -41,6 +42,8 @@ function Modules() {
         <Actions.Tray>
           <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>
         </Actions.Tray>
+
+        <ModuleForm/>
         {
         !modules
         ? (<p>Loading records...</p>)
