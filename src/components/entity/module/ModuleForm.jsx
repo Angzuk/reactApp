@@ -25,6 +25,10 @@ function ModuleForm({onCancel}) {
         // and all the old values are being overrided with the ([name]: value) new values
     };
 
+    const handleSubmit = () => {
+        console.log(`Module=[${JSON.stringify(module)}]`)
+    };
+
     // View -----------------------------------------------------
     return(
         <div className="moduleForm">
@@ -62,12 +66,13 @@ function ModuleForm({onCancel}) {
             </div>
 
             <Actions.Tray>
+                <Actions.Submit showText onClick={handleSubmit}/>
                 <Actions.Cancel showText buttonText="Cancel form" onClick={onCancel}/>
             </Actions.Tray>
 
         </div>
     );
-};
+}
 
 ModuleForm.propTypes = {
     onCancel: PropTypes.func,
