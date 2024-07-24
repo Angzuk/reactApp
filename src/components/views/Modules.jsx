@@ -22,6 +22,7 @@ function Modules() {
 
   // State ---------------------------------------------------- 
   const [modules, setModules] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   const apiGet = async (endpoint) => {
     const response = await fetch(endpoint);
@@ -32,11 +33,7 @@ function Modules() {
   useEffect(() => {apiGet(myModulesEndpoint)}, [myModulesEndpoint]);
 
   // Handlers -------------------------------------------------
-  const handleAdd = (module) => {
-    module.ModuleID = Math.floor(10000 * Math.random());
-    setModules([...modules, newModule]);
-    console.log(`Length of modules: ${modules.length}`);
-  }
+  const handleAdd = () => setShowForm(true);
   // View -----------------------------------------------------  
     return(
         <>
