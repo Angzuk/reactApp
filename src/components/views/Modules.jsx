@@ -35,6 +35,7 @@ function Modules() {
 
   // Handlers -------------------------------------------------
   const handleAdd = () => setShowForm(true);
+  const handleCancel = () => setShowForm(false);
   // View -----------------------------------------------------  
     return(
         <>
@@ -43,7 +44,7 @@ function Modules() {
           { !showForm && <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>}
         </Actions.Tray>
 
-        {showForm && <ModuleForm/>}
+        { showForm && < ModuleForm onCancel={handleCancel} /> }
         {
         !modules
         ? (<p>Loading records...</p>)
