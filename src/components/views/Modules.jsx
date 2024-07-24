@@ -40,7 +40,7 @@ function Modules() {
         <>
         <h1>Modules</h1>
         <Actions.Tray>
-          <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>
+          { !showForm && <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>}
         </Actions.Tray>
 
         {showForm && <ModuleForm/>}
