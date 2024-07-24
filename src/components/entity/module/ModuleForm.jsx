@@ -14,13 +14,23 @@ const initialModule = {
 
 function ModuleForm({onCancel}) {
     // Initialisation -------------------------------------------
+
+    const html2js = {
+        // converting html values from the form into javaScript objects
+        ModuleName: (value) => (value === '' ? null : value), // if empty string return null if no return value
+        ModuleCode: (value) => (value === '' ? null : value),
+        ModuleLevel: (value) => parseInt(value), // integer
+        ModuleYearID: (value) => (value === 0 ? null : parseInt(value)), // this is the approach for the key
+        ModuleLeaderID: (value) => (value === 0 ? null : parseInt(value)),
+        ModuleImageURL: (value) => (value === '' ? null : value),
+    }
     // State ----------------------------------------------------
     const [module, setModule] = useState(initialModule);
 
     // Handlers -------------------------------------------------
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setModule({...module, [name]: value }); // overriding the field that change with the new value
+        setModule({...module, [name]: html2js[name](value) }); // overriding the field that change with the new value
         // so we create an object with all old values (remember that one of this values has changed)
         // and all the old values are being overrided with the ([name]: value) new values
     };
@@ -38,7 +48,7 @@ function ModuleForm({onCancel}) {
                     <input 
                         type="text" 
                         name="ModuleName" 
-                        value={module.ModuleName === null ? "" : module.ModuleName}
+                        value={module.ModuleName === null ? "" : module.ModuleName} // converting javaScript into HTML form 
                         onChange={handleChange}
                     />
                 </label>
