@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Actions from '../UI/Actions.jsx';
 import { CardContainer } from '../UI/Card.jsx';
 import ModuleCard from '../entity/module/ModuleCard.jsx';
 import './Modules.scss';
@@ -40,6 +41,9 @@ function Modules() {
     return(
         <>
         <h1>Modules</h1>
+        <Actions.Tray>
+          <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>
+        </Actions.Tray>
         {
         !modules
         ? (<p>Loading records...</p>)
@@ -52,7 +56,6 @@ function Modules() {
               )
             }
             </CardContainer>
-            <button onClick={() => handleAdd(newModule)}>Add module</button>
             </>)
         }
         </>
