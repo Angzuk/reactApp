@@ -52,6 +52,8 @@ function ModuleForm({onCancel}) {
       };
     
       useEffect(() => {apiGet(yearsEndpoint, setYears)}, [yearsEndpoint]);
+      useEffect(() => {apiGet(staffEndpoint, setStaff)}, [staffEndpoint]);
+
 
     // Handlers -------------------------------------------------
     const handleChange = (event) => {
@@ -123,6 +125,37 @@ function ModuleForm({onCancel}) {
                                 }
                         </select>
                     }
+                </label>
+
+                <label>
+                    Module Leader
+                    { !staff ? (
+                        <p>Loading records... </p> ) :
+                        <select 
+                            name="ModuleLeaderID" // this is exactly as its being stored in the database
+                            value={conformance.js2html["ModuleLeaderID"](module.ModuleLeaderID)} 
+                            onChange={handleChange}
+                            >
+                                <option value="0">None selected</option>
+                                {
+                                    staff.map((member) => // so we are mapping through the array from the database 
+                                        (<option key={member.UserID} value={member.UserID}>
+                                            {`${member.UserFirstname} ${member.UserFirstname}`}
+                                        </option>
+                                    ))
+                                }
+                        </select>
+                    }
+                </label>
+
+                <label>
+                    Module Image
+                    <input 
+                        type="text" 
+                        name="ModuleImageURL" 
+                        value={conformance.js2html["ModuleImageURL"](module.ModuleImageURL)} // converting javaScript into HTML form 
+                        onChange={handleChange}
+                    />
                 </label>
             </div>
 
