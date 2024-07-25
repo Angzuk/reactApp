@@ -36,6 +36,7 @@ function ModuleForm({onCancel}) {
 }
     // State ----------------------------------------------------
     const [module, setModule] = useState(initialModule);
+    const [years, setYears] = useState(null);
 
     // Handlers -------------------------------------------------
     const handleChange = (event) => {
@@ -75,13 +76,38 @@ function ModuleForm({onCancel}) {
 
                 <label>
                     Module Level
-                    <select name="ModuleLevel" value={conformance.js2html["ModuleLevel"](module.ModuleLevel)} onChange={handleChange}>
+                    <select 
+                    name="ModuleLevel" 
+                    value={conformance.js2html["ModuleLevel"](module.ModuleLevel)} 
+                    onChange={handleChange}
+                    >
                         <option value="0" disabled>None selected</option>
                         {
                             [3,4,5,6,7].map((level) => 
                                 (<option key={level}>{level}</option>))
                         }
                     </select>
+                </label>
+
+                <label>
+                    Module Year
+                    { !years ? (
+                        <p>Loading records... </p> ) :
+                        <select 
+                            name="ModuleYearID" // this is exactly as its being stored in the database
+                            value={conformance.js2html["ModuleYearID"](module.ModuleLevel)} 
+                            onChange={handleChange}
+                            >
+                                <option value="0">None selected</option>
+                                {
+                                    years.map((year) => // so we are mapping through the array from the database 
+                                        (<option key={year.YearID} value={year.YearID}>
+                                            {year.YearName}
+                                        </option>
+                                    ))
+                                }
+                        </select>
+                    }
                 </label>
             </div>
 
