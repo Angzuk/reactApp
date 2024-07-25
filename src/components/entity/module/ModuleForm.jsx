@@ -39,6 +39,8 @@ function ModuleForm({onCancel}) {
     const yearsEndpoint = `${apiURL}/years`;
     const staffEndpoint = `${apiURL}/users/staff`;
 
+    const postModuleEndpoint = `${apiURL}/modules`;
+
     // State ----------------------------------------------------
     const [module, setModule] = useState(initialModule);
     const [years, setYears] = useState(null);
@@ -50,9 +52,24 @@ function ModuleForm({onCancel}) {
         const result = await response.json();
         setState(result)
       };
+
+    const apiPost = async (endpoint) => {
+        // Build request object
+        const request = {
+            method: 'POST',
+            body: JSON.stringify(module),
+            headers: {'Content-type' : 'application/json'},
+        };
+        // Call the fetch
+        const response = await fetch(endpoint, request);
+        const result = await response.json();
+        return response.status >= 200 && response.status < 300
+        ? { isSuccess: true }
+        : { isSuccess: false, message: result.message };
+    };
     
-      useEffect(() => {apiGet(yearsEndpoint, setYears)}, [yearsEndpoint]);
-      useEffect(() => {apiGet(staffEndpoint, setStaff)}, [staffEndpoint]);
+    useEffect(() => {apiGet(yearsEndpoint, setYears)}, [yearsEndpoint]);
+    useEffect(() => {apiGet(staffEndpoint, setStaff)}, [staffEndpoint]);
 
 
     // Handlers -------------------------------------------------
@@ -64,7 +81,7 @@ function ModuleForm({onCancel}) {
     };
 
     const handleSubmit = () => {
-        console.log(`Module=[${JSON.stringify(module)}]`)
+        console.log(`Module=[${JSON.stringify(module)}]`);
     };
 
     // View -----------------------------------------------------
