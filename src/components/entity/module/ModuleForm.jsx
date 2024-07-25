@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Actions from '../../UI/Actions.jsx';
+import Actions from '../../UI/Actions';
 import './ModuleForm.scss';
 
 const initialModule = {
@@ -33,10 +33,25 @@ function ModuleForm({onCancel}) {
             ModuleLeaderID: (value) => (value === null ? 0 : value),
             ModuleImageURL: (value) => (value === null ? "" : value),
         }
-}
+    };
+
+    const apiURL = "https://softwarehub.uk/unibase/api";
+    const yearsEndpoint = `${apiURL}/years`;
+    const staffEndpoint = `${apiURL}/users/staff`;
+
     // State ----------------------------------------------------
     const [module, setModule] = useState(initialModule);
     const [years, setYears] = useState(null);
+    const [staff, setStaff] = useState(null);
+    
+
+    const apiGet = async (endpoint, setState) => {
+        const response = await fetch(endpoint);
+        const result = await response.json();
+        setState(result)
+      };
+    
+      useEffect(() => {apiGet(yearsEndpoint, setYears)}, [yearsEndpoint]);
 
     // Handlers -------------------------------------------------
     const handleChange = (event) => {
