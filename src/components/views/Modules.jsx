@@ -36,6 +36,11 @@ function Modules() {
   // Handlers -------------------------------------------------
   const handleAdd = () => setShowForm(true);
   const handleCancel = () => setShowForm(false);
+  const handleSuccess = async () => {
+    handleCancel();
+    await apiGet(myModulesEndpoint);
+  };
+
   // View -----------------------------------------------------  
     return(
         <>
@@ -44,7 +49,7 @@ function Modules() {
           { !showForm && <Actions.Add showText buttonText="Add new module" onClick={handleAdd}/>}
         </Actions.Tray>
 
-        { showForm && < ModuleForm onCancel={handleCancel} /> }
+        { showForm && < ModuleForm onCancel={handleCancel}  onSuccess={handleSuccess}/> }
         {
         !modules
         ? (<p>Loading records...</p>)
@@ -53,7 +58,7 @@ function Modules() {
             <CardContainer>
             {
               modules.map((module)=>
-                <ModuleCard module={module} key={module.ModuleCode}/>
+                <ModuleCard module={module} key={module.ModuleID}/>
               )
             }
             </CardContainer>

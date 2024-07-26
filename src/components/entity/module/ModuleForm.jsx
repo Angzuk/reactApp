@@ -12,7 +12,7 @@ const initialModule = {
     ModuleImageURL: "https://images.freeimages.com/images/small-previews/9b8/electronic-components-2-1242738.jpg",
 }
 
-function ModuleForm({onCancel}) {
+function ModuleForm({onCancel, onSuccess}) {
     // Initialisation -------------------------------------------
     const conformance = {
         html2js: {
@@ -86,7 +86,7 @@ function ModuleForm({onCancel}) {
         const result = await apiPost(postModuleEndpoint, module);
         
         if (result.isSuccess) {
-            onCancel();
+            onSuccess();
         }
         else 
             alert(result.message)
@@ -195,6 +195,8 @@ function ModuleForm({onCancel}) {
 
 ModuleForm.propTypes = {
     onCancel: PropTypes.func,
+    onSuccess: PropTypes.func,
 };
+
 
 export default ModuleForm;
