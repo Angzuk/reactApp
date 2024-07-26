@@ -53,11 +53,11 @@ function ModuleForm({onCancel}) {
         setState(result)
       };
 
-    const apiPost = async (endpoint) => {
+    const apiPost = async (endpoint, record) => {
         // Build request object
         const request = {
             method: 'POST',
-            body: JSON.stringify(module),
+            body: JSON.stringify(record),
             headers: {'Content-type' : 'application/json'},
         };
         // Call the fetch
@@ -80,8 +80,13 @@ function ModuleForm({onCancel}) {
         // and all the old values are being overrided with the ([name]: value) new values
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         console.log(`Module=[${JSON.stringify(module)}]`);
+
+        const result = await apiPost(postModuleEndpoint, module);
+        result.isSuccess
+            ? console.log ('Insert successful')
+            : console.log(`Insert NOT successful ${result.message}`) ;
     };
 
     // View -----------------------------------------------------
