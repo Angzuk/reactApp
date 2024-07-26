@@ -84,9 +84,12 @@ function ModuleForm({onCancel}) {
         console.log(`Module=[${JSON.stringify(module)}]`);
 
         const result = await apiPost(postModuleEndpoint, module);
-        result.isSuccess
-            ? console.log ('Insert successful')
-            : console.log(`Insert NOT successful ${result.message}`) ;
+        
+        if (result.isSuccess) {
+            onCancel();
+        }
+        else 
+            alert(result.message)
     };
 
     // View -----------------------------------------------------
