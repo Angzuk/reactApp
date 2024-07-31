@@ -1,4 +1,5 @@
-import { useState, createContext } from 'react';
+import { useState } from 'react';
+import AuthContext from './components/auth/useAuth.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './components/views/Home.jsx';
@@ -11,7 +12,7 @@ function App() {
   // State ----------------------------------------------------
   const [loggedInUser, setLoggedInUser] = useState(null);
 
-  const AuthContext = createContext(null);
+
 
   // Handlers -------------------------------------------------
   const login = (user) => setLoggedInUser(user);
