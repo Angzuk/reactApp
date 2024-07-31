@@ -14,7 +14,9 @@ function Modules() {
 
   //const loggedInUserGroup = 820;
   const apiURL = "https://softwarehub.uk/unibase/api";
-  const myModulesEndpoint = `${apiURL}/modules/leader/${loggedInUser.UserID}`
+  const myModulesEndpoint = loggedInUser.UserUsertypeID === 1 
+  ? `${apiURL}/modules/leader/${loggedInUser.UserID}`
+  : `${apiURL}/modules/users/${loggedInUser.UserID}`;
 
 
   // State ---------------------------------------------------- 
