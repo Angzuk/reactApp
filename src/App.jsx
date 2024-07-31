@@ -12,10 +12,14 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   const AuthContext = createContext(null);
+
   // Handlers -------------------------------------------------
+  const login = (user) => setLoggedInUser(user);
+  const logout = (user) => setLoggedInUser(null);
+
   // View -----------------------------------------------------
   return (
-    <AuthContext.Provider>
+    <AuthContext.Provider value={{loggedInUser, login, logout}}>
       <BrowserRouter>
         <Layout>
           <Routes>
