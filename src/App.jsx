@@ -5,7 +5,7 @@ import Home from './components/views/Home.jsx';
 import Modules from './components/views/Modules.jsx';
 import Students from './components/views/Students.jsx';
 import PageNotFound from './components/views/PageNotFound.jsx';
-import Login from './components/views/Students.jsx';
+import Login from './components/views/Login.jsx';
 
 function App() {
   // Initialisation -------------------------------------------
