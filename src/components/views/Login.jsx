@@ -3,7 +3,7 @@ import Action from '../UI/Actions.jsx';
 
 function Login(){
     // Initialisation -------------------------------------------
-    const {login} = useAuth;
+    const {login} = useAuth();
 
     const student = {
         UserID: 276,

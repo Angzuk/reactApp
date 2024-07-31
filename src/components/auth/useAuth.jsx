@@ -4,7 +4,6 @@ const AuthContext = createContext(null);
 
 export const AuthProvider  = ({children}) => {
     // Initialisation -------------------------------------------
-
     // State ----------------------------------------------------
     const [loggedInUser, setLoggedInUser] = useState(null);
 
