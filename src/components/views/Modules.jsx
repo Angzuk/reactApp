@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '../auth/useAuth.jsx';
 import Actions from '../UI/Actions.jsx';
 import ModuleForm from '../entity/module/ModuleForm.jsx';
@@ -9,13 +9,6 @@ import './Modules.scss';
 
 function Modules() {
   // Initialisation -------------------------------------------
-  const newModule = {
-    ModuleName: "Programming Workshop",
-    ModuleCode: "CI2234",
-    ModuleLevel: 4,
-    ModuleLeaderID: 1,
-    ModuleImageURL: "https://images.freeimages.com/images/small-previews/9b8/electronic-components-2-1242738.jpg"
-  };
 
   const {loggedInUser} = useAuth();
 

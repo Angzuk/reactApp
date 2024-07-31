@@ -6,6 +6,7 @@ function Login(){
     const {login} = useAuth;
 
     const student = {
+        UserID: 276,
         UserFirstname: "Hashim", 
         UserLastname: "ABDALLAH", 
         UserEmail: "K1083454@kingston.ac.uk", 
@@ -41,6 +42,7 @@ function Login(){
     const handleStaff = ()=> {
         login(staff)
     };
+
     // View -----------------------------------------------------
     return (
         <Action.Tray>
