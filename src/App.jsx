@@ -5,6 +5,7 @@ import Home from './components/views/Home.jsx';
 import Modules from './components/views/Modules.jsx';
 import Students from './components/views/Students.jsx';
 import PageNotFound from './components/views/PageNotFound.jsx';
+import Login from './components/views/Students.jsx';
 
 function App() {
   // Initialisation -------------------------------------------
@@ -20,6 +21,7 @@ function App() {
             <Route path="/modules" element={<Modules />} />
             <Route path="/students" element={<Students />} />
             <Route path="/*" element={<PageNotFound />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Layout>
       </BrowserRouter>
