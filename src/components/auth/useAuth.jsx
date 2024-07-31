@@ -4,14 +4,9 @@ const AuthContext = createContext(null);
 
 export const AuthProvider  = ({children}) => {
     // Initialisation -------------------------------------------
-    const graeme = {
-        UserID: 820,
-        UserFirstname: "Graeme",
-        UserUsertypeID: 1,
-    };
 
   // State ----------------------------------------------------
-  const [loggedInUser, setLoggedInUser] = useState(graeme);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   // Handlers -------------------------------------------------
   const login = (user) => setLoggedInUser(user);
