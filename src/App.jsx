@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import AuthContext from './components/auth/useAuth.jsx';
+import { AuthProvider } from './components/auth/useAuth.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './components/views/Home.jsx';
@@ -9,22 +8,11 @@ import PageNotFound from './components/views/PageNotFound.jsx';
 
 function App() {
   // Initialisation -------------------------------------------
-  const graeme = {
-    UserID: 824,
-    UserFirstname: "Paul",
-    UserUsertypeID: 1,
-  };
-
   // State ----------------------------------------------------
-  const [loggedInUser, setLoggedInUser] = useState(graeme);
-
   // Handlers -------------------------------------------------
-  const login = (user) => setLoggedInUser(user);
-  const logout = (user) => setLoggedInUser(null);
-
   // View -----------------------------------------------------
   return (
-    <AuthContext.Provider value={{loggedInUser, login, logout}}>
+    <AuthProvider>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -35,7 +23,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
-    </AuthContext.Provider>
+    </AuthProvider>
 );
 }
 

@@ -1,10 +1,11 @@
-import { useContext } from 'react';
-import AuthContext from '../auth/useAuth.jsx';
+
+import {useAuth} from '../auth/useAuth.jsx';
 import './Header.scss';
 
 function Header(){
     // Initialisation -------------------------------------------
-    const {loggedInUser} = useContext(AuthContext);
+    const {loggedInUser} = useAuth();
+    
     // State ----------------------------------------------------
     // Handlers -------------------------------------------------
     // View -----------------------------------------------------

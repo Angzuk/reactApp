@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import AuthContext from '../auth/useAuth.jsx';
+import { useAuth } from '../auth/useAuth.jsx';
 import Actions from '../UI/Actions.jsx';
 import ModuleForm from '../entity/module/ModuleForm.jsx';
 import { CardContainer } from '../UI/Card.jsx';
@@ -17,7 +17,7 @@ function Modules() {
     ModuleImageURL: "https://images.freeimages.com/images/small-previews/9b8/electronic-components-2-1242738.jpg"
   };
 
-  const {loggedInUser} = useContext(AuthContext);
+  const {loggedInUser} = useAuth();
 
   //const loggedInUserGroup = 820;
   const apiURL = "https://softwarehub.uk/unibase/api";
