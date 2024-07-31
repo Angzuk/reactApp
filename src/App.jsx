@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './components/views/Home.jsx';
@@ -7,13 +8,13 @@ import PageNotFound from './components/views/PageNotFound.jsx';
 
 function App() {
   // Initialisation -------------------------------------------
-  const loggedInUser = "Graeme";
   // State ----------------------------------------------------
+  const [loggedInUser, setLoggedInUser] = useState(null);
   // Handlers -------------------------------------------------
   // View -----------------------------------------------------
   return (
     <BrowserRouter>
-      <Layout loggedInUser={loggedInUser}>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/modules" element={<Modules />} />
