@@ -9,10 +9,14 @@ import PageNotFound from './components/views/PageNotFound.jsx';
 
 function App() {
   // Initialisation -------------------------------------------
+  const graeme = {
+    UserID: 820,
+    UserFirstname: "Graeme",
+    UserUsertypeID: 1,
+  };
+
   // State ----------------------------------------------------
-  const [loggedInUser, setLoggedInUser] = useState(null);
-
-
+  const [loggedInUser, setLoggedInUser] = useState(graeme);
 
   // Handlers -------------------------------------------------
   const login = (user) => setLoggedInUser(user);
