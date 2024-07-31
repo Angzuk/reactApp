@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import {useAuth} from '../auth/useAuth.jsx';
 import Action from '../UI/Actions.jsx';
 
 function Login(){
     // Initialisation -------------------------------------------
     const {login} = useAuth();
+    const navigate = useNavigate();
 
     const student = {
         UserID: 276,
@@ -37,10 +39,12 @@ function Login(){
     // Handlers -------------------------------------------------
     const handleStudent = () => {
         login(student);
+        navigate("/");
     };
 
     const handleStaff = ()=> {
         login(staff)
+        navigate("/");
     };
 
     // View -----------------------------------------------------
